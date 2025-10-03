@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chúc mừng trung thu PDUers</title>
+    
+    <style>
+        /* CSS CĂN GIỮA TUYỆT ĐỐI */
+        body {
+            /* Căn giữa tuyệt đối trên toàn màn hình */
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            min-height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; 
+        }
+        
+        /* Ẩn video ban đầu */
+        #video-container {
+            display: none; 
+        }
+        
+        /* Tùy chỉnh kích thước và phong cách nút */
+        .large-button {
+            padding: 20px 40px; 
+            font-size: 24px; 
+            cursor: pointer;
+            border-radius: 12px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .large-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+        
+        /* Tăng kích thước video và chỉnh lại thành DÁNG NGANG */
+        #video-container video {
+            /* Đã đảo ngược giá trị width và height */
+            width: 800px;  /* CHIỀU RỘNG lớn hơn */
+            height: 450px; /* CHIỀU CAO nhỏ hơn */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        }
+        
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <input 
+        type="button" 
+        id="mo-button"
+        value="Nhấn đây nè" 
+        onclick="hienThiVideoVaAnNut()"
+        class="large-button"
+    >
+    
+    <div id="video-container">
+        <video controls>
+            <source src="Media/7078774157467.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video.
+        </video>
+    </div>
+
+<script>
+    function hienThiVideoVaAnNut() {
+        var videoDiv = document.getElementById("video-container");
+        var button = document.getElementById("mo-button");
+        
+        // HIỂN THỊ VIDEO
+        videoDiv.style.display = 'block'; 
+        
+        // ẨN NÚT
+        button.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
